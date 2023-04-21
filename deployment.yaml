@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: DeploymentName
+  labels:
+    owner: DorinLupu
+spec:
+  selector:
+    matchLabels:
+      app: PodName
+  template:
+    metadata:
+      labels:
+        app: PodName
+    spec:
+      containers:
+      - name: ContainerName
+        image: nginx:latest
+        ports:
+        - containerPort: 80
