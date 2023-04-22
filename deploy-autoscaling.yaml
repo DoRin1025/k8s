@@ -17,11 +17,15 @@ spec:
       containers:
       - name: containername
         image: httpd:latest
+        resources:
+          limits:
+           cpu: 1
+           memory: 128Mi
         ports:
         - containerPort: 80
 
 ---
-apiVersion: autoscaling/v2
+apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   name: my-autoscaling
