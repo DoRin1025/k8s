@@ -31,7 +31,7 @@ spec:
     kind: Deployment
     name: deploymentname-autoscaling
   minReplicas: 1
-  maxReplicas: 3
+  maxReplicas: 6
   metrics:
   - type: Resource
     resource:
