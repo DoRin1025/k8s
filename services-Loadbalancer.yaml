@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploymentname
+  labels:
+    owner: DorinLupu
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: podname
+  template:
+    metadata:
+      labels:
+        app: podname    # Service will look for those PODS Labels!!!
+    spec:
+      containers:
+      - name: containername
+        image: dorin1025/k8sphpapp2:latest
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  labels:
+     owner: DorinLupu
+     env  : prod
+spec:
+  selector:
+    app: podname  # Selecting PODS with those Labels
+  ports:
+  - port: 3425
+    targetPort: 80
+  type: LoadBalancer
+
