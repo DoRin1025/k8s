@@ -29,10 +29,11 @@ spec:
             port: 
               number: 8080
 
-  - host: nginx.dorin.com
+  - host: httpd.dorin.com
     http:
       paths:
-      - path: "/httpd"
+      - pathType: Prefix
+        path: "/"
         backend:
           service:
             name: httpd
