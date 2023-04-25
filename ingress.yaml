@@ -22,9 +22,20 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/cat"
+        path: "/"
         backend:
           service:
             name: tomcat
             port: 
               number: 8080
+
+  - host: nginx.dorin.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/httpd"
+        backend:
+          service:
+            name: httpd
+            port: 
+              number: 80
