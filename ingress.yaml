@@ -32,8 +32,7 @@ spec:
   - host: nginx.dorin.com
     http:
       paths:
-      - pathType: Prefix
-        path: "/httpd"
+      - path: "/httpd"
         backend:
           service:
             name: httpd
