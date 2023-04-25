@@ -18,11 +18,11 @@ spec:
             port: 
               number: 80
 
-  - host: tomcat.dorin.com
+  - host: nginx.dorin.com
     http:
       paths:
       - pathType: Prefix
-        path: "/"
+        path: "/cat"
         backend:
           service:
             name: tomcat
