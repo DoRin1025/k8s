@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  labels:
+    name: my-ingress
+    owner: DorinLupu
+spec:
+  rules:
+  - host: nginx.dorin.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: nginx
+            port: 
+              number: 80
+
+  - host: tomcat.dorin.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: tomcat
+            port: 
+              number: 8080
